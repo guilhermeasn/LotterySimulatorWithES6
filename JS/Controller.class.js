@@ -27,7 +27,6 @@ class Controller {
             this._form.btnStop.classList.remove('d-none');
             
             let maxMatches = (bet.count <= this._form.draw.value) ? bet.count : this._form.draw.value;
-            console.log(maxMatches);
             this._interval = setInterval(() => {
                 let raffle = lottery.raffle();
                 this._printResult(
