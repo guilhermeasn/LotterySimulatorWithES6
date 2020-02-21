@@ -75,20 +75,20 @@ class Controller {
 
     _printResult(count, result, matches, maxMatches) {
         let p = document.createElement('p');
-        let r = document.createTextNode('Sorteio nº. ' + count + ': ' + result.join(', ') + ' (ACERTOU: ' + matches + ' DE ' + maxMatches + ')');
+        let r = document.createTextNode(`Sorteio nº. ${count}: ${result.join(', ')} (ACERTOU: ${matches})`);
         p.appendChild(r);
         matches    = parseInt(matches);
         maxMatches = parseInt(maxMatches);
         switch(matches) {
-            case (maxMatches):
-                this._stop();
-                p.classList.add('bg-dark', 'text-light');
+            case 0:
+                p.classList.add('text-muted');
                 break;
             case (maxMatches-1):
                 p.classList.add('bg-secondary', 'text-light');
                 break;
-            case 0:
-                p.classList.add('text-muted');
+            case (maxMatches):
+                this._stop();
+                p.classList.add('bg-dark', 'text-light');
                 break;
         }
         this._to.prepend(p);
