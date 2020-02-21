@@ -19,9 +19,8 @@ class Lottery {
     raffle() {
         let result = new Array(this._numDraw);
         for(let c = 0; c < result.length; c++) {
-            let random = this._getRandom(this._numStart, this._numCount);
-            if(result.indexOf(random) == -1) result[c] = random;
-            else                             --c;
+            let random = this._getRandom(this._numStart, this._numStart + this._numCount);
+            (result.indexOf(random) == -1) ? result[c] = random : --c;
         }
         return result.sort((a, b) => a-b);
     }

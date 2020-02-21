@@ -8,40 +8,43 @@
     <body class="px-5 py-3">
         <h1 class="h3">Loteria ES6</h1>
         <h2 class="lead">Simulador de Loteria</h2>
-        <form class="jumbotron p-3" id="formLottery" to='#result'>
-            <div class="form-group">
-                <label>Número inicial do volante</label>
-                <span class="badge badge-secondary" id="viewStart"></span>
-                <input class="custom-range" type="range" name="start" to='#viewStart' value="1" min="1" max="100" step="1">
-            </div>
-            <div class="form-group">
-                <label>Quantidade de números do volante</label>
-                <span class="badge badge-secondary" id="viewCount"></span>
-                <input class="custom-range" type="range" name="count" to='#viewCount' value="60" min="1" max="100" step="1">
-            </div>
-            <div class="form-group">
-                <label>Quantidade de números sorteados</label>
-                <span class="badge badge-secondary" id="viewDraw"></span>
-                <input class="custom-range" type="range" name="draw" to='#viewDraw' value="6" min="1" max="100" step="1">
-            </div>
-            <div class="form-group">
-                <label>Quantidade máxima de tentativas de acerto</label>
-                <span class="badge badge-secondary" id="viewQuantity"></span>
-                <input class="custom-range" type="range" name="quantity" to='#viewQuantity' value="1000" min="1000" max="1000000" step="1000">
-            </div>
-            <div class="form-group">
-                <label>Números jogados</label>
-                <span class="small text-muted">(Ex.: 1, 10, 20, 30, 50, 55)</span>
-                <input class="form-control" type="text" name="bet" pattern="^\d+(,\s?\d+)*$">
-            </div>
-            <div class="form-group">
-                <input class="btn btn-secondary" name="btnClean" type="button" value="Limpar" disabled>
-                <input class="btn btn-primary d-none" name="btnStop" type="button" value="Parar">
-                <input class="btn btn-primary" name="btnSubmit" type="submit" value="Simular">
-            </div>
-        </form>
-        <div id="result" class="border-top"></div>
-        
+
+		<section class='row'>
+        	<form class="jumbotron m-0 p-3 col-lg-6" id="formLottery" to='#result'>
+            	<div class="form-group">
+                	<label>Número inicial do volante</label>
+                	<span class="badge badge-secondary" id="viewStart"></span>
+                	<input class="custom-range" type="range" name="start" to='#viewStart' value="1" min="0" max="100" step="1">
+            	</div>
+            	<div class="form-group">
+                	<label>Quantidade de números do volante</label>
+                	<span class="badge badge-secondary" id="viewCount"></span>
+                	<input class="custom-range" type="range" name="count" to='#viewCount' value="60" min="1" max="100" step="1">
+            	</div>
+            	<div class="form-group">
+                	<label>Quantidade de números sorteados</label>
+                	<span class="badge badge-secondary" id="viewDraw"></span>
+                	<input class="custom-range" type="range" name="draw" to='#viewDraw' value="6" min="1" max="100" step="1">
+            	</div>
+            	<div class="form-group">
+                	<label>Quantidade máxima de tentativas de acerto</label>
+                	<span class="badge badge-secondary" id="viewQuantity"></span>
+                	<input class="custom-range" type="range" name="quantity" to='#viewQuantity' value="1000" min="1000" max="1000000" step="1000">
+            	</div>
+            	<div class="form-group">
+                	<label>Números jogados</label>
+                	<span class="small text-muted">(Ex.: 1, 10, 20, 30, 50, 55)</span>
+                	<input class="form-control" type="text" name="bet" pattern="^\d+(,\s?\d+)*$">
+            	</div>
+            	<div class="form-group">
+                	<input class="btn btn-secondary" name="btnClean" type="button" value="Limpar" disabled>
+                	<input class="btn btn-primary d-none" name="btnStop" type="button" value="Parar">
+                	<input class="btn btn-primary" name="btnSubmit" type="submit" value="Simular">
+            	</div>
+        	</form>
+        	<div id="result" class="border rounded col-lg-6" style="overflow-y: scroll; height: 500px;"></div>
+		</section>
+
         <script src="JS/Bet.class.js"></script>
         <script src="JS/Lottery.class.js"></script>
         <script src="JS/Controller.class.js"></script>
