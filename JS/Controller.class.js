@@ -11,6 +11,13 @@ class Controller {
 
 
     _addEventListeners() {
+        document.querySelectorAll('input[to]').forEach(element => {
+            document.querySelector(element.getAttribute('to')).innerText = element.value;
+            element.addEventListener('change', function() {
+                document.querySelector(element.getAttribute('to')).innerText = element.value;
+            });
+        });
+
         this._form.addEventListener('submit', event => {
             event.preventDefault();
             this._savePreferences();
@@ -25,6 +32,8 @@ class Controller {
 
             this._form.btnSubmit.classList.add('d-none');
             this._form.btnStop.classList.remove('d-none');
+
+            if(this._to.innerHTML.trim()) this._clean();
             
             let maxMatches = (bet.count <= this._form.draw.value) ? bet.count : this._form.draw.value;
             this._interval = setInterval(() => {
@@ -40,11 +49,7 @@ class Controller {
         });
 
         this._form.btnClean.addEventListener('click', () => {
-            if(confirm('Tem certeza que deseja apagar todo o resultado da(s) simulação(ões)?')) {
-                this._form.btnClean.disabled = true;
-                this._to.innerHTML = null;
-                this._count = 1;
-            }
+            this._clean();
         });
 
         this._form.btnStop.addEventListener('click', () => {
@@ -54,13 +59,17 @@ class Controller {
 
 
     _stop() {
-        if(this._count >= this._form.quantity.value) {
-            this._form.quantity.value = this._form.quantity.value * 2;
-        }
         clearInterval(this._interval);
         this._form.btnClean.disabled = false;
         this._form.btnStop.classList.add('d-none');
         this._form.btnSubmit.classList.remove('d-none');
+    }
+
+
+    _clean() {
+        this._form.btnClean.disabled = true;
+        this._to.innerHTML = null;
+        this._count = 1;
     }
 
 
