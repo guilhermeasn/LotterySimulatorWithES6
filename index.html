@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,13 +40,13 @@
                 <input class="btn btn-primary" name="btnSubmit" type="submit" value="Simular">
             </div>
         </form>
-        <hr>
-        <div id="result"></div>
+        <div id="result" class="border-top"></div>
+        
+        <script src="JS/Bet.class.js"></script>
+        <script src="JS/Lottery.class.js"></script>
+        <script src="JS/Controller.class.js"></script>
+        <script>
+            var lotteryController = new Controller('#formLottery');
+        </script>
     </body>
-    <script src="JS/Bet.class.js"></script>
-    <script src="JS/Lottery.class.js"></script>
-    <script src="JS/Controller.class.js"></script>
-    <script>
-        var lotteryController = new Controller('#formLottery');
-    </script>
 </html>
