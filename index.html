@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <title>LotterySimulatorWithES6</title>
         <meta name="author" content="Guilherme Augusto (guilhermeasn@yahoo.com.br)">
@@ -12,27 +12,27 @@
         <section class='row'>
             <form class="jumbotron m-0 p-3 col-lg-6" id="formLottery" to='#result'>
                 <div class="form-group">
-                    <label>Número inicial do volante</label>
+                    <label>N&uacute;mero inicial do volante</label>
                     <span class="badge badge-secondary" id="viewStart"></span>
                     <input class="custom-range" type="range" name="start" to='#viewStart' value="1" min="0" max="100" step="1">
                 </div>
                 <div class="form-group">
-                    <label>Quantidade de números do volante</label>
+                    <label>Quantidade de n&uacute;meros do volante</label>
                     <span class="badge badge-secondary" id="viewCount"></span>
                     <input class="custom-range" type="range" name="count" to='#viewCount' value="60" min="1" max="100" step="1">
                 </div>
                 <div class="form-group">
-                    <label>Quantidade de números sorteados</label>
+                    <label>Quantidade de n&uacute;meros sorteados</label>
                     <span class="badge badge-secondary" id="viewDraw"></span>
                     <input class="custom-range" type="range" name="draw" to='#viewDraw' value="6" min="1" max="100" step="1">
                 </div>
                 <div class="form-group">
-                    <label>Quantidade máxima de tentativas de acerto</label>
+                    <label>Quantidade m&aacute;xima de tentativas de acerto</label>
                     <span class="badge badge-secondary" id="viewQuantity"></span>
                     <input class="custom-range" type="range" name="quantity" to='#viewQuantity' value="1000" min="1000" max="1000000" step="1000">
                 </div>
                 <div class="form-group">
-                    <label>Números jogados</label>
+                    <label>N&uacute;meros jogados</label>
                     <span class="small text-muted">(Ex.: 1, 10, 20, 30, 50, 55)</span>
                     <input class="form-control" type="text" name="bet" pattern="^\d+(,\s?\d+)*$" required>
                 </div>

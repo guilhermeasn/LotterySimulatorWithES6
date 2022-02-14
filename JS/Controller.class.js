@@ -75,7 +75,7 @@ class Controller {
 
     _printResult(count, result, matches, maxMatches) {
         let p = document.createElement('p');
-        let r = document.createTextNode(`Sorteio nº. ${count}: ${result.join(', ')} (ACERTOU: ${matches})`);
+        let r = document.createTextNode(`Sorteio n. ${count}: ${result.join(', ')} (ACERTOU: ${matches})`);
         p.appendChild(r);
         matches    = parseInt(matches);
         maxMatches = parseInt(maxMatches);
